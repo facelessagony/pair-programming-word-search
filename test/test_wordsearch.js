@@ -1,3 +1,4 @@
+//collaborated with https://github.com/Squoog
 const chai = require('chai');
 const assert = chai.assert;
 
@@ -34,5 +35,21 @@ describe("#wordSearch()", function() {
     ], 'SEINFELD')
 
     assert.isTrue(result);
+  });
+
+  it("should return undefined if the matrix is empty", function() {
+    const result = wordSearch([
+      [],
+    ], 'SEINFELD')
+
+    assert.isUndefined(result);
+  });
+
+  it("should return undefined if the word is empty", function() {
+    const result = wordSearch([
+      ['a'],
+    ], '')
+
+    assert.isUndefined(result);
   });
 });
